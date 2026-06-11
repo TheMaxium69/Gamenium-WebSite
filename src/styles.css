@@ -1,0 +1,165 @@
+/* ─── Reset ─────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Gamenium Theme Variables ─────────────────────────────── */
+
+:root {
+  --gm-blue:     #0533c8;
+  --gm-red:      #bf0000;
+  --gm-gradient: linear-gradient(135deg, #0533c8 0%, #bf0000 100%);
+  --gm-gradient-text: linear-gradient(135deg, #0533c8, #bf0000);
+  --gm-section-bg:   #ffffff;
+  --gm-section-alt:  #f8f9ff;
+  --gm-text:         #0f172a;
+  --gm-text-2:       #475569;
+  --gm-card-bg:      #ffffff;
+  --gm-card-border:  rgba(5, 51, 200, 0.14);
+  --gm-input-bg:     #f1f5ff;
+  --gm-input-border: #dbeafe;
+}
+
+[data-theme="dark"] {
+  --gm-section-bg:   #0a0d14;
+  --gm-section-alt:  #0f1422;
+  --gm-text:         #f1f5f9;
+  --gm-text-2:       #94a3b8;
+  --gm-card-bg:      #131929;
+  --gm-card-border:  rgba(5, 51, 200, 0.22);
+  --gm-input-bg:     #131929;
+  --gm-input-border: rgba(5, 51, 200, 0.28);
+}
+
+/* ─── Global ───────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--gm-section-bg);
+  color: var(--gm-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* ─── Gradient text ────────────────────────────────────────── */
+
+.gm-gradient-text {
+  background: var(--gm-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Sections ─────────────────────────────────────────────── */
+
+.gm-section {
+  padding: 100px 24px;
+  background: var(--gm-section-bg);
+}
+
+.gm-section--alt {
+  background: var(--gm-section-alt);
+}
+
+.gm-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gm-section-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  background: var(--gm-gradient);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.gm-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  color: var(--gm-text);
+}
+
+.gm-section-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--gm-text-2);
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.75;
+}
+
+/* ─── Buttons ──────────────────────────────────────────────── */
+
+.gm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  background: var(--gm-gradient);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(5, 51, 200, 0.35);
+  white-space: nowrap;
+}
+
+.gm-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(5, 51, 200, 0.45);
+}
+
+.gm-btn--outline {
+  background: transparent;
+  border: 1.5px solid rgba(5, 51, 200, 0.35);
+  color: var(--gm-text);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .gm-btn--outline {
+  border-color: rgba(5, 51, 200, 0.45);
+}
+
+.gm-btn--outline:hover {
+  border-color: var(--gm-blue);
+  box-shadow: 0 4px 16px rgba(5, 51, 200, 0.2);
+}
+
+/* ─── Dark mode misc ───────────────────────────────────────── */
+
+[data-theme="dark"] .split-list li i { color: #60a5fa; }
+
+@media (max-width: 768px) {
+  .gm-section { padding: 72px 20px; }
+}
+
+@media (max-width: 480px) {
+  .gm-section { padding: 60px 16px; }
+}

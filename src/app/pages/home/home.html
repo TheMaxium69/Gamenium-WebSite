@@ -1,0 +1,291 @@
+<!-- ══════════════════════ HERO ══════════════════════════════ -->
+<section id="hero" class="hero">
+
+  <!-- Aurora blobs -->
+  <div class="hero__aurora" aria-hidden="true">
+    <span class="hero__orb hero__orb--blue"></span>
+    <span class="hero__orb hero__orb--violet"></span>
+    <span class="hero__orb hero__orb--red"></span>
+  </div>
+
+  <!-- Grid overlay -->
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="ri-gamepad-line"></i>
+      {{ lang() === 'en' ? '100% Free SaaS' : 'SaaS 100% gratuit' }}
+    </div>
+
+    <h1 class="hero-title">
+      Gamenium
+    </h1>
+
+    <p class="hero-subtitle">
+      {{ lang() === 'en'
+        ? 'The platform for gamers: news, collection management & game reference — all in one, all free.'
+        : 'La plateforme des joueurs : actualités JV, gestion de collection & référence de jeux — tout en un, tout gratuit.' }}
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://app.gamenium.fr" class="hero__btn hero__btn--primary">
+        <i class="ri-gamepad-fill"></i>
+        {{ lang() === 'en' ? 'Access Gamenium' : 'Accéder à Gamenium' }}
+        <i class="ri-arrow-right-line"></i>
+      </a>
+      <button class="hero__btn hero__btn--ghost" (click)="scrollTo('features')">
+        {{ lang() === 'en' ? 'Discover features' : 'Découvrir les fonctionnalités' }}
+        <i class="ri-arrow-right-line"></i>
+      </button>
+    </div>
+
+    <div class="hero-useritium">
+      <img src="assets/tyrolium-ui/projects/Useritium.png" alt="Useritium" class="hero-useritium-logo" />
+      <span>
+        {{ lang() === 'en'
+          ? 'Sign in with your Useritium account'
+          : 'Connexion via votre compte Useritium' }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Vagues animées -->
+  <div class="hero__waves">
+    <svg class="hero__waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gm-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="hero__waves-parallax">
+        <use xlink:href="#gm-wave" x="48" y="0" fill="rgba(248,249,255,0.7)" />
+        <use xlink:href="#gm-wave" x="48" y="3" fill="rgba(248,249,255,0.5)" />
+        <use xlink:href="#gm-wave" x="48" y="5" fill="rgba(248,249,255,0.3)" />
+        <use xlink:href="#gm-wave" x="48" y="7" fill="#f8f9ff" />
+      </g>
+    </svg>
+  </div>
+
+</section>
+
+<!-- ══════════════════════ FEATURES ══════════════════════════ -->
+<section id="features" class="gm-section gm-section--alt">
+  <div class="gm-container">
+    <div class="section-head">
+      <span class="gm-section-label">
+        {{ lang() === 'en' ? 'Features' : 'Fonctionnalités' }}
+      </span>
+      <h2 class="gm-section-title">
+        <span class="gm-gradient-text">
+          {{ lang() === 'en' ? 'Everything a gamer needs' : 'Tout ce dont un joueur a besoin' }}
+        </span>
+      </h2>
+      <p class="gm-section-sub">
+        {{ lang() === 'en'
+          ? 'Three powerful tools unified in a single free platform.'
+          : 'Trois outils puissants réunis dans une seule plateforme gratuite.' }}
+      </p>
+    </div>
+
+    <div class="features-grid">
+      @for (f of features; track f.labelEn) {
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i [class]="f.icon"></i>
+          </div>
+          <h3 class="feature-title">{{ lang() === 'en' ? f.labelEn : f.label }}</h3>
+          <p class="feature-desc">{{ lang() === 'en' ? f.descEn : f.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ NEWS ═══════════════════════════════ -->
+<section id="news" class="gm-section">
+  <div class="gm-container">
+    <div class="split-section split-section--reverse">
+      <div class="split-visual">
+        <div class="split-mockup split-mockup--news">
+          <div class="news-mock-list">
+            @for (i of [1,2,3]; track i) {
+              <div class="news-mock-item">
+                <div class="news-mock-thumb"></div>
+                <div class="news-mock-info">
+                  <div class="mock-line mock-line--wide"></div>
+                  <div class="mock-line"></div>
+                  <div class="news-mock-meta">
+                    <div class="mock-line mock-line--short"></div>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="split-text">
+        <span class="gm-section-label">
+          {{ lang() === 'en' ? 'Gaming News' : 'Actualités JV' }}
+        </span>
+        <h2 class="split-title">
+          {{ lang() === 'en'
+            ? 'Always informed, never behind'
+            : 'Toujours informé, jamais en retard' }}
+        </h2>
+        <p class="split-desc">
+          {{ lang() === 'en'
+            ? 'Access the latest gaming news, reviews, trailers and announcements curated for you. Filter by genre, platform or studio and never miss a release.'
+            : 'Accédez aux dernières actualités jeu vidéo, tests, trailers et annonces sélectionnés pour vous. Filtrez par genre, plateforme ou studio et ne manquez jamais une sortie.' }}
+        </p>
+        <ul class="split-list">
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Real-time news feed' : 'Fil d\'actualité en temps réel' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Reviews & previews' : 'Tests & avant-premières' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Platform & genre filters' : 'Filtres plateforme & genre' }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ COLLECTION ════════════════════════ -->
+<section id="collection" class="gm-section gm-section--alt">
+  <div class="gm-container">
+    <div class="split-section">
+      <div class="split-text">
+        <span class="gm-section-label">
+          {{ lang() === 'en' ? 'My Collection' : 'Ma Collection' }}
+        </span>
+        <h2 class="split-title">
+          {{ lang() === 'en'
+            ? 'Your library, every detail'
+            : 'Votre ludothèque, dans les moindres détails' }}
+        </h2>
+        <p class="split-desc">
+          {{ lang() === 'en'
+            ? 'Add games to your collection and track everything: platform, completion status, personal rating, edition, notes and more. Your collection, your rules.'
+            : 'Ajoutez vos jeux et suivez tout : plateforme, statut de complétion, note personnelle, édition, notes et plus. Votre collection, vos règles.' }}
+        </p>
+        <ul class="split-list">
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Platform tracking (PS5, Xbox, PC…)' : 'Suivi par plateforme (PS5, Xbox, PC…)' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Completion status & personal rating' : 'Statut de complétion & note personnelle' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Custom fields & private notes' : 'Champs personnalisés & notes privées' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Statistics & visual progress' : 'Statistiques & suivi visuel' }}</li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <div class="split-mockup split-mockup--collection">
+          <div class="coll-mock-grid">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="coll-mock-game" [class.coll-mock-game--done]="i % 3 === 0">
+                <div class="coll-game-cover"></div>
+                <div class="coll-game-bar" [style.width]="(30 + i * 12) + '%'"></div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ REFERENCE ═════════════════════════ -->
+<section id="reference" class="gm-section">
+  <div class="gm-container">
+    <div class="split-section split-section--reverse">
+      <div class="split-visual">
+        <div class="split-mockup split-mockup--ref">
+          <div class="ref-mock-search">
+            <i class="ri-search-line"></i>
+            <div class="mock-line mock-line--wide" style="flex:1"></div>
+          </div>
+          <div class="ref-mock-result">
+            <div class="ref-game-cover"></div>
+            <div class="ref-game-info">
+              <div class="mock-line mock-line--wide"></div>
+              <div class="mock-line mock-line--short"></div>
+              <div class="ref-tags">
+                <span class="ref-tag">RPG</span>
+                <span class="ref-tag">PS5</span>
+                <span class="ref-tag">2024</span>
+              </div>
+              <div class="ref-stars">
+                @for (s of [1,2,3,4,5]; track s) {
+                  <i class="ri-star-fill" [class.ref-star--active]="s <= 4"></i>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="ref-mock-list">
+            @for (i of [1,2,3]; track i) {
+              <div class="ref-mock-item">
+                <div class="ref-mini-cover"></div>
+                <div class="mock-line" style="flex:1"></div>
+                <div class="mock-line mock-line--short"></div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="split-text">
+        <span class="gm-section-label">
+          {{ lang() === 'en' ? 'Game Reference' : 'Référence Jeux' }}
+        </span>
+        <h2 class="split-title">
+          {{ lang() === 'en'
+            ? 'Discover any game ever made'
+            : 'Découvrez n\'importe quel jeu existant' }}
+        </h2>
+        <p class="split-desc">
+          {{ lang() === 'en'
+            ? 'Search our comprehensive game database: thousands of titles with complete information — developer, publisher, genres, platforms, release dates, ratings and descriptions.'
+            : 'Recherchez dans notre base complète de jeux : des milliers de titres avec toutes les informations — développeur, éditeur, genres, plateformes, dates de sortie, notes et descriptions.' }}
+        </p>
+        <ul class="split-list">
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Thousands of game entries' : 'Des milliers d\'entrées de jeux' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Advanced search & filters' : 'Recherche avancée & filtres' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'One-click add to collection' : 'Ajout en 1 clic à la collection' }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ HOW IT WORKS ══════════════════════ -->
+<section id="how" class="gm-section gm-section--alt">
+  <div class="gm-container">
+    <div class="section-head">
+      <span class="gm-section-label">
+        {{ lang() === 'en' ? 'Get started' : 'Commencer' }}
+      </span>
+      <h2 class="gm-section-title">
+        <span class="gm-gradient-text">
+          {{ lang() === 'en' ? 'Up and running in 3 steps' : 'Prêt en 3 étapes' }}
+        </span>
+      </h2>
+    </div>
+
+    <div class="steps-grid">
+      @for (step of steps; track step.num) {
+        <div class="step-card">
+          <div class="step-num">{{ step.num }}</div>
+          <h3 class="step-title">{{ lang() === 'en' ? step.labelEn : step.label }}</h3>
+          <p class="step-desc">{{ lang() === 'en' ? step.descEn : step.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CTA FINAL ══════════════════════════ -->
+
+<tyro-ui-cta
+        [title]="lang() === 'en' ? 'Ready to level up your gaming life?' : 'Prêt à passer votre vie de joueur au niveau supérieur ?' "
+        [content]="lang() === 'en'
+            ? 'Gamenium is free, forever. No credit card. Just your Useritium account.'
+            : 'Gamenium est gratuit, pour toujours. Pas de carte bancaire. Juste votre compte Useritium.'"
+        [btn]="lang() === 'en' ? 'Access Gamenium' : 'Accéder à Gamenium'"
+        [btnIcon]="`<i class='ri-gamepad-fill'></i>`"
+        [btnLink]="APP_GAMENIUM_LINK"
+        [subbtn]=" lang() === 'en' ? 'Create a Useritium account' : 'Créer un compte Useritium' "
+        [subLink]="'https://dashboard.useritium.fr/?w=s'"
+        [notBack]="true"
+></tyro-ui-cta>
