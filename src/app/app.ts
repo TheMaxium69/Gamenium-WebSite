@@ -17,7 +17,7 @@ export class App {
   public PROJECT_CONTENT = computed(() =>
     this.langService.lang() === 'en'
       ? `<strong>Gamenium</strong> is a <strong>free SaaS</strong> by Tyrolium for gamers: browse gaming news, manage your collection in detail, and explore a comprehensive game reference database. Sign in with your <em>Useritium</em> account.`
-      : `<strong>Gamenium</strong> est un <strong>SaaS gratuit</strong> de Tyrolium pour les joueurs : consultez les actualités JV, gérez votre collection dans le moindre détail et explorez une base de référence complète de jeux vidéo. Connectez-vous avec votre compte <em>Useritium</em>.`
+      : `<strong>Gamenium</strong> est un <strong>SaaS gratuit</strong> pour les joueurs : consultez les actualités JV, gérez votre collection dans le moindre détail et explorez une base de référence complète de jeux vidéo. Une filiale de <em>Tyrolium</em>.`
   );
 
   public pages = computed<ITyroUiNavbarPages[]>(() =>
