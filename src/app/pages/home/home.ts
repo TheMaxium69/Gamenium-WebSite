@@ -26,8 +26,8 @@ export class Home {
       icon: 'ri-stack-line',
       labelEn: 'My Collection',
       label: 'Ma Collection',
-      descEn: 'Catalog your entire game library in full detail — platforms, status, ratings, notes, completion and more.',
-      desc: 'Cataloguez toute votre ludothèque dans les moindres détails — plateformes, statut, notes, complétion et plus encore.',
+      descEn: 'Catalog your entire game library in full detail - platforms, status, ratings, notes, completion and more.',
+      desc: 'Cataloguez toute votre ludothèque dans les moindres détails - plateformes, statut, notes, complétion et plus encore.',
     },
     {
       icon: 'ri-database-2-line',
@@ -43,8 +43,8 @@ export class Home {
       num: '01',
       labelEn: 'Sign in with Useritium',
       label: 'Connectez-vous avec Useritium',
-      descEn: 'Use your existing Useritium account — no new registration needed.',
-      desc: 'Utilisez votre compte Useritium existant — pas de nouvelle inscription nécessaire.',
+      descEn: 'Use your existing Useritium account - no new registration needed.',
+      desc: 'Utilisez votre compte Useritium existant - pas de nouvelle inscription nécessaire.',
     },
     {
       num: '02',
