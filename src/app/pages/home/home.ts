@@ -50,7 +50,7 @@ export class Home {
       num: '02',
       labelEn: 'Explore the platform',
       label: 'Explorez la plateforme',
-      descEn: 'Browse gaming news, search the game reference database freely.',
+      descEn: 'Browse gaming news, explore the game reference database freely.',
       desc: 'Parcourez les actualités JV, explorez la base de référence de jeux librement.',
     },
     {
